@@ -16,12 +16,12 @@ const login = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error('email and password required');
   }
-  // check static admin
+
   if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
     const token = generateToken({ email, role: 'admin' });
     return res.json({ user: { email, role: 'admin' }, token });
   }
-  // Optionally: allow other users stored in DB in future - for now reject
+
   res.status(401);
   throw new Error('Invalid credentials');
 });

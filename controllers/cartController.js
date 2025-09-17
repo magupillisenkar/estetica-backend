@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler');
 const Cart = require('../models/Cart');
 const Product = require('../models/Product');
 
-// GET /api/cart
+
 const getCart = asyncHandler(async (req, res) => {
   const userEmail = req.user ? req.user.email : req.query.email;
   if (!userEmail) { res.status(400); throw new Error('user email required'); }
@@ -13,7 +13,7 @@ const getCart = asyncHandler(async (req, res) => {
   res.json(cart);
 });
 
-// POST /api/cart/add { productId, qty }
+
 const addToCart = asyncHandler(async (req, res) => {
   const userEmail = req.user ? req.user.email : req.body.email;
   if (!userEmail) { res.status(400); throw new Error('user email required'); }
@@ -34,7 +34,7 @@ const addToCart = asyncHandler(async (req, res) => {
   res.json(cart);
 });
 
-// PUT /api/cart/update/:itemId  body: { qty }
+
 const updateCartItem = asyncHandler(async (req, res) => {
   const userEmail = req.user ? req.user.email : req.body.email;
   if (!userEmail) { res.status(400); throw new Error('user email required'); }
@@ -55,7 +55,7 @@ const updateCartItem = asyncHandler(async (req, res) => {
   res.json(cart);
 });
 
-// DELETE /api/cart/remove/:itemId
+
 const removeCartItem = asyncHandler(async (req, res) => {
   const userEmail = req.user ? req.user.email : req.body.email;
   if (!userEmail) { res.status(400); throw new Error('user email required'); }

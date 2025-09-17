@@ -52,24 +52,6 @@ const getProduct = asyncHandler(async (req, res) => {
   res.json(p);
 });
 
-// const updateProduct = asyncHandler(async (req, res) => {
-//   const p = await Product.findById(req.params.id);
-//   if (!p) { res.status(404); throw new Error('Product not found'); }
-//   const { name, description, price, stock, category } = req.body;
-//   if (category) {
-//     const CategoryModel = require('../models/Category');
-//     const cat = await CategoryModel.findById(category);
-//     if (!cat) { res.status(400); throw new Error('Category not found'); }
-//   }
-//   p.name = name || p.name;
-//   p.description = description || p.description;
-//   p.price = price != null ? price : p.price;
-//   p.stock = stock != null ? stock : p.stock;
-//   p.category = category || p.category;
-//   await p.save();
-//   res.json(p);
-// });
-
 const deleteProduct = asyncHandler(async (req, res) => {
   const p = await Product.findById(req.params.id);
   if (!p) { res.status(404); throw new Error('Product not found'); }

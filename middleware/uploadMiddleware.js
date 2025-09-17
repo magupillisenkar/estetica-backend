@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
   }
 });
 
-// File filter (optional)
+
 function fileFilter(req, file, cb) {
   const allowed = /jpeg|jpg|png|gif/;
   const ext = allowed.test(path.extname(file.originalname).toLowerCase());

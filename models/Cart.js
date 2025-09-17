@@ -6,7 +6,7 @@ const cartItemSchema = new mongoose.Schema({
 });
 
 const cartSchema = new mongoose.Schema({
-  userEmail: { type: String, required: true }, // since auth is static, we use email to identify cart
+  userEmail: { type: String, required: true },
   items: [cartItemSchema]
 }, { timestamps: true });
 
