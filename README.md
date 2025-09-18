@@ -1,4 +1,4 @@
-# Estetica Backend (Atlas)
+# Estetica Backend
 ## Features
 - Static admin auth: login with admin@gmail.com / 123456 (configured via .env)
 - Categories CRUD (protected for create/update/delete)
